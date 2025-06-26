@@ -1,3 +1,22 @@
 h1.class1{
     margin: 30px;
 }
+
+.img-wrap{
+    position:relative
+    display:inline-block;
+}
+.img-wrap img{
+    display:block;
+    width:100%;
+    height: auto;
+}
+.overlay{
+    position:absolute;
+    top:30%;
+    left:25%;
+
+    transform:translate(-50%,-50%);
+    color:#fff;
+    background:rgba(0,0,0,0.5);
+}
