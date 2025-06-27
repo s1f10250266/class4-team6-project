@@ -3,11 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <title>高尾山とは？</title>
+        <link rel="stylesheet" href="css/page1.css">
+         <style>
+    .media-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .media-container img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+    .media-container .description {
+      max-width: 400px;
+      line-height: 1.6;
+    }
+  </style>
     </head>
     <body>
         <h1>高尾山とは？</h1>
-        <p>画像</p>
-        <img src="picture/map.jpg" style="width:300px; height:300px;">
-        <img src="picture/landscape.jpg" style="width:300px; height:300px;">
+        <div class="media-container">
+            <img src="picture/map.jpg" style="width:400px; height:400px;">
+            <img src="picture/landscape.jpg" style="width:400px; height:400px;">
+          <div class="description">
+            <h2>高尾山の魅力</h2>
+              <p>
+                東京都八王子市にある標高５９９メートルの山で、登山初心者でも気軽に楽しめる山です。都心からのアクセスが良く、新宿駅から高尾山のある高尾山口駅まで約１時間で行くことができます。
+                <u>
+                  ２００７年には、ミシュラン観光ガイドで三ツ星を獲得し、年間２６０万人から３００万人の観光者が訪れるなど非常に人気な山です。
+                </u>
+                ぜひ休日は、高尾山に足を運んでみてはいかがでしょうか。
+              </p>
+          </div>
+        </div>
     </body>
 </html>
