@@ -42,19 +42,19 @@ p.shop2{
 .picture2 img{
     width: 100%;
 }
-p.shop2{
+p.shop3{
     background: #BCCF88;
     padding: 6.87787px;
 }
-.picture2{
+.picture3{
     position: relative;
 }
-.picture2 p{
+.picture3 p{
     position: absolute;
     color: black;
     top: 2px;
     left: 2px;
 }
-.picture2 img{
+.picture3 img{
     width: 100%;
 }
