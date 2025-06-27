@@ -1,3 +1,10 @@
 .description p {
-    border: solid 5px #ff7777;
+    border: solid 5px #56AF08;
+}
+
+h1 {
+    border-bottom: solid 5px #56AF08;
+}
+body {
+    background-color:#EEFAD1;
 }
