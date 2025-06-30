@@ -1,6 +1,6 @@
 body{
     font-family: sans-serif;
-    background-color:#EEFAD1;
+    background-color:white;
     margin: 0; 
 }
 
@@ -80,7 +80,7 @@ body{
 
 
 .content-block {
-    background-color:#EEFAD1;
+    background-color:white;
     display: flex; 
     justify-content: center; 
     align-items: center; 
