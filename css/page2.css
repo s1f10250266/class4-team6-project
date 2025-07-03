@@ -1,60 +1,93 @@
-body{
-    width:100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
+body {
+  background: #f4f8fa;
+  font-family: 'Segoe UI', 'Meiryo', sans-serif;
+  margin: 0;
+  padding: 0;
 }
+.carousel {
+  position: relative;
+  width: 900px;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px #ddd;
+  padding: 32px 0 40px 0;
+  text-align: center;
+}
+.carousel-inner img {
+  display: none;
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+#c1:checked ~ .carousel-inner .img1 {
+  display: inline-block;
+}
+#c2:checked ~ .carousel-inner .img2 {
+  display: inline-block;
+}
+#c3:checked ~ .carousel-inner .img3 {
+  display: inline-block;
+}
+.carousel-nav {
+  margin-top: 18px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+#c1:checked ~ .carousel-nav label[for="c1"],
+#c2:checked ~ .carousel-nav label[for="c2"],
+#c3:checked ~ .carousel-nav label[for="c3"] {
+  border: 2px solid #216dc5;
+  background: #216dc5;
+}
+.carousel input[type=radio] {
+  display: none;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 40px;
+  box-shadow: 0 1px 6px #ccc;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+.carousel-arrows {
+  position: relative;
+  width: 100%;
+}
+.carousel-arrow.prev { left: 30px; }
+.carousel-arrow.next { right: 30px; }
+.carousel-arrow.hidden { display: none; }
+#c1:checked ~ .carousel-arrows label[for="c3"].prev,
+#c1:checked ~ .carousel-arrows label[for="c2"].next { display: flex; }
+#c2:checked ~ .carousel-arrows label[for="c1"].prev,
+#c2:checked ~ .carousel-arrows label[for="c3"].next { display: flex; }
+#c3:checked ~ .carousel-arrows label[for="c2"].prev,
+#c3:checked ~ .carousel-arrows label[for="c1"].next { display: flex; }
+
 h1.main{
-    margin: 0;
-    padding: 0;
-    background-position: top;
-    background-color: #BCCF88;
-}
-p.shop1{
- background: #BCCF88;
- padding: 6.87787px;   
-}
-.picture1{
-    position: relative;
-}
-.picture1 p{
-    position: absolute;
-    color: black;
-    top: 2px;
-    left: 2px;
-}
-.picture1 img{
-    width: 100%;
-}
-p.shop2{
+    padding: 1rem 2rem;
     background: #BCCF88;
-    padding: 6.87787px;
-}
-.picture2{
-    position: relative;
-}
-.picture2 p{
-    position: absolute;
-    color: black;
-    top: 2px;
-    left: 2px;
-}
-.picture2 img{
-    width: 100%;
-}
-p.shop3{
-    background: #BCCF88;
-    padding: 6.87787px;
-}
-.picture3{
-    position: relative;
-}
-.picture3 p{
-    position: absolute;
-    color: black;
-    top: 2px;
-    left: 2px;
-}
-.picture3 img{
-    width: 100%;
+    border-bottom: 6px diuble #00552e;
 }

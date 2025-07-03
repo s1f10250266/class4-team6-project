@@ -3,21 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>観光スポット・グルメ</title>
-        <link rel="stylesheet" type="text/css" href="css/page2.css"
+        <link rel="stylesheet"  href="css/page2.css">
     </head>
     <body>
         <h1 class="main">観光スポット・グルメ</h1>
-        <div class="picture1">
-            <img src="picture\yamabiko-tororo.jpg">
-            <p class="shop1">やまびこ茶屋</p>
-        </div>
-        <div class="picture2">
-            <img src="picture\temple.jpg">
-            <p class="shop2">薬王院</p>
-        </div>
-        <div class="picture3">
-            <img src="picture\monkey-garden.jpg">
-            <p class="shop3">さる園・野草園</p>
-        </div>
+        <div class="carousel">
+          <input type="radio" id="c1" name="carousel" checked>
+          <input type="radio" id="c2" name="carousel">
+          <input type="radio" id="c3" name="carousel">
+
+          <div class="carousel-inner">
+             <img src="picture/yamabiko-tororo.jpg" class="img1" alt="Yamabiko">
+             <img src="picture/temple.jpg" class="img2" alt="Temple">
+             <img src="picture/monkey-garden.jpg" class="img3" alt="Monkey Garden">
+          </div>
+
+          <div class="carousel-arrows">
+             <label for="c3" class="carousel-arrow prev">&#60;</label>
+             <label for="c2" class="carousel-arrow next">&#62;</label>
+             <label for="c1" class="carousel-arrow prev hidden">&#60;</label>
+             <label for="c3" class="carousel-arrow next hidden">&#62;</label>
+             <label for="c2" class="carousel-arrow prev hidden">&#60;</label>
+             <label for="c1" class="carousel-arrow next hidden">&#62;</label>
+          </div>
+
+          <div class="carousel-nav">
+             <label for="c1" class="dot"></label>
+             <label for="c2" class="dot"></label>
+             <label for="c3" class="dot"></label>
+          </div>
+        </div>       
     </body>
 </html>
