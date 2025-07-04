@@ -1,0 +1,11 @@
+body {
+  background-image: url("../picture/landscape.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.8);
+  /* … */
+}
