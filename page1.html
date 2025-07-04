@@ -4,42 +4,99 @@
         <meta charset="UTF-8">
         <title>高尾山とは？</title>
         <link rel="stylesheet" href="css/page1.css">
-         <style>
-    .media-container {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-    .media-container img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-    }
-    .media-container .description {
-      max-width: 400px;
-      line-height: 1.6;
-    }
-  </style>
+        <style>
+            /* 既存のスタイルはそのままに、ここで画像サイズだけ調整します */
+            .media-container {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            /* figure 内の画像を小さくする */
+            .media-container figure img {
+                width: 650px;     /* お好みの横幅に */
+                height: auto;     /* アスペクト比を維持 */
+                object-fit: cover;
+                display: block;
+            }
+            .media-container .description {
+                max-width: 400px;
+                line-height: 1.6;
+            }
+            /* 前／次ボタンのスタイル */
+            .button-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .button-container button {
+                padding: 8px 16px;
+                margin: 0 8px;
+                background-color: #4B6700;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .button-container button:hover {
+                background-color: #3E5300;
+            }
+        </style>
     </head>
     <body>
         <h1>高尾山とは？</h1>
         <div class="media-container">
-          <figure>
-            <img src="picture/map.jpg" style="width:400px; height:400px;">
-            <figcaption>↑明治の森国定公園 高尾山遊歩マップ</figcaption>
-            <img src="picture/temple-monster.jpg" style="width:650px; height:650px;">
-            <figcaption>薬師寺</figcaption>
-          </figure>
-          <div class="description">
-            <h2>高尾山の魅力</h2>
-              <p>
-                東京都八王子市にある標高５９９メートルの山で、登山初心者でも気軽に楽しめる山です。都心からのアクセスが良く、新宿駅から高尾山のある高尾山口駅まで約１時間で行くことができます。
-                <u>
-                  ２００７年には、ミシュラン観光ガイドで三ツ星を獲得し、年間２６０万人から３００万人の観光者が訪れるなど非常に人気な山です。
-                </u>
-                ぜひ休日は、高尾山に足を運んでみてはいかがでしょうか。
-              </p>
-          </div>
+            <figure>
+                <!-- inline style は削除 -->
+                <img src="picture/temple-monster.jpg" alt="薬師寺">
+                <figcaption id="caption">薬師寺</figcaption>
+            </figure>
+            <div class="description">
+                <h2>高尾山の魅力</h2>
+                <p>
+                    東京都八王子市にある標高５９９メートルの山で、登山初心者でも気軽に楽しめる山です。都心からのアクセスが良く、新宿駅から高尾山のある高尾山口駅まで約１時間で行くことができます。
+                    <u>２００７年には、ミシュラン観光ガイドで三ツ星を獲得し、年間２６０万人から３００万人の観光者が訪れるなど非常に人気な山です。</u>
+                    ぜひ休日は、高尾山に足を運んでみてはいかがでしょうか。
+                </p>
+            </div>
         </div>
+        <!-- ボタン -->
+        <div class="button-container">
+            <button id="prev">前の画像</button>
+            <button id="next">次の画像</button>
+        </div>
+        <!-- 画像切り替え用 JS -->
+        <script>
+            // 画像切り替え対象のパス配列
+            const images = [
+                'picture/temple-monster.jpg',
+                'picture/map.jpg'
+            ];
+            // 対応するキャプション配列（同じインデックスに対応）
+            const captions = [
+                '薬師寺',
+                '高尾山遊歩マップ'
+            ];
+            let current = 0;
+            // DOM を取得
+            const imgEl     = document.querySelector('.media-container figure img');
+            const captionEl = document.getElementById('caption');
+            const btnPrev   = document.getElementById('prev');
+            const btnNext   = document.getElementById('next');
+            // キャプションも含めて更新する関数
+            function updateMedia() {
+                imgEl.src             = images[current];
+                captionEl.textContent = captions[current];
+            }
+            // 前ボタン
+            btnPrev.addEventListener('click', () => {
+                current = (current - 1 + images.length) % images.length;
+                updateMedia();
+            });
+            // 次ボタン
+            btnNext.addEventListener('click', () => {
+                current = (current + 1) % images.length;
+                updateMedia();
+            });
+        </script>
     </body>
 </html>
