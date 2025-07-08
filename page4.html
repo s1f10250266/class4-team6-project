@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/page4.css">
     <title>お問い合わせフォーム</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        より良いwebサイトに作成のためにみなさまのご意見を募集しております。
+      </div>
+      <div class="form-section">
+        <form id="enqueteForm" action="#" method="post">
+          <div class="question-group">
+            <p>このwebサイトの評価はいくつですか？</p>
+            <div class="radio-options">
+              <label>
+                <input type="radio" name="found_page" value="1" required>1:良い
+              </label>
+              <label>
+                <input type="radio" name="found_page" value="2" required>2:どちらかといえば良い
+              </label>
+              <label>
+                <input type="radio" name="found_page" value="3" required>3:どちらかといえば悪い
+              </label>
+              <label>
+                <input type="radio" name="found_page" value="4" required>4:悪い
+              </label>
+            </div>
+          </div>
 
-    <h1>アンケート</h1>
-    <form action="#" method="post">
-        <div>
-            <label for="name">氏名</label>
-            <input type="text" id="name" name="name">
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div>
+          <div class="comments-group">
             <label for="comments">ここに意見を書いてください。</label>
             <textarea id="comments" name="comments"></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="submit-button">送信</button>
+          </div>
+        </form>
+
+        <div id="message-container"
+             style="text-align: center; margin-top: 20px; font-size: 1.2em; color: green; font-weight: bold;">
         </div>
-        <div>
-            <input type="checkbox" id="confirm" name="confirm">
-            <label for="confirm">内容を確認しました</label>
-        </div>
-        <input type="submit" value="提出">
-    </form>
-    <script src="js/bg-slider.js"></script> 
-</body>
+      </div>
+    </div>
+    <script src="js/bg-slider.js"></script>
+    <script src="js/page4.js"></script>
+  </body>
 </html>

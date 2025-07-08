@@ -8,3 +8,104 @@ form {
   background: rgba(255,255,255,0.8); 
   /* … */ 
 } 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+.header {
+    background-color: #3f7cac;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.form-section {
+    padding: 20px;
+}
+.question-group {
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+.question-group:last-of-type {
+    margin-bottom: 30px; /* Adjust spacing before button */
+}
+.question-group p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+.radio-options label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 25px;
+    font-size: 0.95em;
+    color: #555;
+    cursor: pointer;
+}
+.radio-options input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.1); /* Slightly larger radio buttons */
+}
+.submit-button {
+    width: 120px;
+    padding: 12px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block; /* Make it a block element to center with margin auto */
+    margin: 0 auto; /* Center the button */
+}
+.submit-button:hover {
+    background-color: #0056b3;
+}
+.comments-group {
+    margin-bottom: 25px; /* 質問グループと似た余白を設定 */
+    padding: 15px; /* question-group と同様のパディング */
+    border: 1px solid #e0e0e0; /* question-group と同様のボーダー */
+    border-radius: 5px; /* question-group と同様の角丸 */
+    background-color: #ffffff; /* question-group と同様の背景色 */
+}
+
+.comments-group label {
+    display: block; /* ラベルをブロック要素にして改行 */
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+
+.comments-group textarea {
+    width: calc(100% - 10px); /* 親要素の幅に合わせて調整 */
+    min-height: 100px; /* 最小の高さ */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    font-size: 0.95em;
+    resize: vertical; /* 縦方向のみリサイズ可能にする */
+}
