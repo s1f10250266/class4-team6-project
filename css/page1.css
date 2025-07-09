@@ -11,20 +11,23 @@
 
 .description p {
     font-size: 20px;
-    background-color: #BCCF88; 
+    background-color: #249c0a; 
     animation: slideInFromRight 1s ease-out 0.5s forwards;
+    color: #ffffff ;
 }
 
 h1 {
     border-bottom: solid 5px #4B6700;
-    background-color:  #BCCF88;
+    background-color: #249c0a ;
     padding: 10px;
     animation: slideInFromRight 1s ease-out forwards;
+    color: #ffffff;
 }
 h2 {
     border-bottom: solid 5px #4B6700;
-    background-color:  #A6D52C;
+    background-color:  #249c0a;
     padding: 10px;
+    color: #ffffff;
 }
 body {
     background-color: #ffffff;
@@ -36,6 +39,7 @@ body {
     text-decoration: underline;
     text-decoration-color: #4B6700;
     text-decoration-thickness: 3px;
+    color: #ffffff;
 }
 .media-container figure img {
   width: 650px;
