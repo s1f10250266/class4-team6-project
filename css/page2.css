@@ -1,101 +1,177 @@
 body {
-  background: #f4f8fa;
-  font-family: 'Segoe UI', 'Meiryo', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-.carousel {
-  position: relative;
-  width: 900px;
-  margin: 80px auto;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 6px 24px #ddd;
-  padding: 32px 0 40px 0;
-  text-align: center;
+    background: #f4f8fa; 
+    font-family: 'Segoe UI', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+h1.main {
+    padding: 16px 32px;
+    background: #BCCF88;
+    border-bottom: 6px double #00552e;
+    text-align: center;
+    color: #333;
+    margin-top: 0; 
+}
+
+/* --- カルーセル全体のコンテナ --- */
+.carousel {
+    position: relative; 
+    width: 900px; /* カルーセルの固定幅 */
+    margin: 80px auto; /* ページの中央に配置 */
+    background: #fff; /* カルーセル自体の背景色を白に */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1); /* 影で立体感を出す */
+    padding: 32px 0 40px 0;
+    overflow: hidden; /* ★重要: 表示範囲外のスライドを隠す */
+}
+
+/* --- ラジオボタンを非表示にする --- */
+.carousel input[type="radio"] {
+    display: none;
+}
+
+/* --- カルーセルの内部（スライドが並ぶ領域） --- */
+.carousel-inner {
+    display: flex; /* 子要素（.carousel-item）を横並びにする */
+    width: 300%; /* スライドが3つあるので、全体の幅は300%（100% * 3） */
+    transition: transform 0.6s ease-in-out; /* スライドのアニメーションをスムーズにする */
+}
+
+/* --- 各カルーセルのアイテム（1枚のスライド） --- */
+.carousel-item { /* スライド一つ分の領域 */
+    width: calc(100% / 3); /* 3つに分割して、各アイテムがカルーセル幅の1/3になるように */
+    flex-shrink: 0; /* アイテムが縮まないようにする */
+    box-sizing: border-box; /* paddingやborderをwidthに含める計算方法 */
+    position: relative; /* タイトルオーバーレイの配置基準 */
+    text-align: left; /* テキストの左寄せ */
+    padding: 0 40px; /* スライド内容の左右の余白 */
+}
+
+.carousel-item img {
+    display: block; /* 画像の下にできる余白をなくす */
+    width: 100%; /* 親要素の幅いっぱいに画像を表示 */
+    height: auto; /* 高さは自動調整 */
+    border-radius: 6px; /* 画像の角を丸くする */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* 画像に影を付ける */
+    margin-bottom: 20px; /* 画像と説明文の間の余白 */
+}
+
+/* --- 画像上のタイトル表示部分 --- */
+.title-overlay {
+    position: absolute; /* .carousel-item を基準に配置 */
+    top: 30px; /* 上からの位置 */
+    left: 70px; /* 左からの位置（.carousel-item の padding 含む） */
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* 半透明の黒い背景 */
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* --- 説明文のスタイル --- */
+.description {
+    margin-top: 0; /* 上の余白を調整 */
+    font-size: 1.1em;
+    line-height: 1.7; /* 行の高さを調整して読みやすく */
+    color: #555; /* 文字色 */
+    text-align: justify; /* 両端揃え */
+    margin-bottom: 1em; /* 段落ごとの下余白 */
+}
+
+/* --- ナビゲーションドット（下部の丸いボタン） --- */
 .carousel-nav {
-  margin-top: 18px;
+    margin-top: 30px;
+    text-align: center;
 }
+
 .dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 4px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border 0.2s;
+    height: 14px;
+    width: 14px;
+    margin: 0 6px;
+    background-color: #bbb; /* 非アクティブなドットの色 */
+    border-radius: 50%; /* 完全な丸にする */
+    display: inline-block;
+    cursor: pointer; /* マウスカーソルをポインターにする */
+    border: 3px solid transparent; /* アクティブ時に使うボーダー */
+    transition: all 0.3s ease; /* 色やサイズの変化をスムーズに */
 }
+
+/* --- アクティブなドットのスタイル --- */
 #c1:checked ~ .carousel-nav label[for="c1"],
 #c2:checked ~ .carousel-nav label[for="c2"],
 #c3:checked ~ .carousel-nav label[for="c3"] {
-  border: 2px solid #216dc5;
-  background: #216dc5;
-}
-.carousel input[type=radio] {
-  display: none;
+    border-color: #216dc5; /* 青色のボーダー */
+    background: #216dc5; /* 青色の背景 */
+    transform: scale(1.1); /* 少し大きくする */
 }
 
-.carousel-text{
-  display: none;
-  position: relative;
-  display: inline-block;
-}
-
-.carousel-text img{
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.text{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 1.2em;
-}
-
+/* --- カルーセル矢印（左右のボタン） --- */
 .carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 28px;
-  background: #fff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  line-height: 40px;
-  box-shadow: 0 1px 6px #ccc;
-  cursor: pointer;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.9;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    color: #555;
+    background: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px; /* テキスト（矢印記号）を垂直方向に中央揃え */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 10; /* 他の要素より手前に表示 */
+    display: flex; /* 矢印記号を中央揃えにするためのFlexbox */
+    align-items: center;
+    justify-content: center;
+    opacity: 0.95;
+    transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
-.carousel-arrows {
-  position: relative;
-  width: 100%;
-}
-.carousel-arrow.prev { left: 30px; }
-.carousel-arrow.next { right: 30px; }
-.carousel-arrow.hidden { display: none; }
-#c1:checked ~ .carousel-arrows label[for="c3"].prev,
-#c1:checked ~ .carousel-arrows label[for="c2"].next { display: flex; }
-#c2:checked ~ .carousel-arrows label[for="c1"].prev,
-#c2:checked ~ .carousel-arrows label[for="c3"].next { display: flex; }
-#c3:checked ~ .carousel-arrows label[for="c2"].prev,
-#c3:checked ~ .carousel-arrows label[for="c1"].next { display: flex; }
 
-h1.main{
-    padding: 1rem 2rem;
-    background: #BCCF88;
-    border-bottom: 6px diuble #00552e;
+.carousel-arrow:hover {
+    opacity: 1;
+    background-color: #f0f0f0; /* ホバー時の背景色 */
+    transform: translateY(-50%) scale(1.05); /* ホバー時に少し拡大 */
+}
+
+.carousel-arrow.prev { left: 15px; } /* 左矢印の位置 */
+.carousel-arrow.next { right: 15px; } /* 右矢印の位置 */
+
+/* --- カルーセルのスライド動作（CSSのみ） --- */
+/* 各ラジオボタンがチェックされたときに、.carousel-innerを移動させる */
+#c1:checked ~ .carousel-inner {
+    transform: translateX(0%); /* 1枚目のスライドを表示 */
+}
+#c2:checked ~ .carousel-inner {
+    transform: translateX(-33%); /* 2枚目のスライドを表示 (100%左へ移動) */
+}
+#c3:checked ~ .carousel-inner {
+    transform: translateX(-66%); /* 3枚目のスライドを表示 (200%左へ移動) */
+}
+
+/* --- 矢印の表示/非表示ロジック（循環式） --- */
+/* デフォルトでは全ての矢印を非表示にする */
+.carousel-arrows label {
+    display: none; 
+}
+
+/* 各スライドが選択されたときに、適切な矢印のみを表示する */
+/* 1枚目（c1）がチェックされている場合 */
+#c1:checked ~ .carousel-arrows label[for="c2"].next, /* 次へ（c2へ） */
+#c1:checked ~ .carousel-arrows label[for="c3"].prev { /* 前へ（c3へ、循環） */
+    display: flex;
+}
+
+/* 2枚目（c2）がチェックされている場合 */
+#c2:checked ~ .carousel-arrows label[for="c1"].prev, /* 前へ（c1へ） */
+#c2:checked ~ .carousel-arrows label[for="c3"].next { /* 次へ（c3へ） */
+    display: flex;
+}
+
+/* 3枚目（c3）がチェックされている場合 */
+#c3:checked ~ .carousel-arrows label[for="c2"].prev, /* 前へ（c2へ） */
+#c3:checked ~ .carousel-arrows label[for="c1"].next { /* 次へ（c1へ、循環） */
+    display: flex;
 }
