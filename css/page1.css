@@ -11,9 +11,9 @@
 
 .description p {
     font-size: 20px;
-    background-color: #EEFAD1; 
+    background-color: #74815a; 
     animation: slideInFromLeft 1s ease-out forwards;
-    color: #000000 ;
+    color: #ffffff ;
 }
 
 h1 {
@@ -21,14 +21,14 @@ h1 {
     background-color: #BCCF88;
     padding: 10px;
     animation: slideInFromLeft 1s ease-out forwards;
-    color: #000000;
+    color: #ffffff;
 }
 h2 {
     border-bottom: solid 5px #4B6700;
     background-color: #BCCF88;
     padding: 10px;
     animation: slideInFromLeft 1s ease-out forwards;
-    color: #000000;
+    color: #ffffff;
 }
 body {
     background-color: #ffffff;
@@ -45,7 +45,7 @@ body {
     text-decoration: underline;
     text-decoration-color: #4B6700;
     text-decoration-thickness: 3px;
-    color: #000000;
+    color: #ffffff;
 }
 .media-container figure img {
   width: 650px;
