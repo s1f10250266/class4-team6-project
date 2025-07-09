@@ -1,4 +1,4 @@
-@keyframes slideInFromRight {
+@keyframes slideInFromLeft {
     from {
         transform: translateX(100%);
         opacity: 0;
@@ -11,22 +11,23 @@
 
 .description p {
     font-size: 20px;
-    background-color: #249c0a; 
-    animation: slideInFromRight 1s ease-out 0.5s forwards;
+    background-color: #74815a; 
+    animation: slideInFromLeft 1s ease-out forwards;
     color: #ffffff ;
 }
 
 h1 {
     border-bottom: solid 5px #4B6700;
-    background-color: #249c0a ;
+    background-color: #BCCF88;
     padding: 10px;
-    animation: slideInFromRight 1s ease-out forwards;
+    animation: slideInFromLeft 1s ease-out forwards;
     color: #ffffff;
 }
 h2 {
     border-bottom: solid 5px #4B6700;
-    background-color:  #249c0a;
+    background-color: #BCCF88;
     padding: 10px;
+    animation: slideInFromLeft 1s ease-out forwards;
     color: #ffffff;
 }
 body {
@@ -34,6 +35,11 @@ body {
     margin: 0;
     padding: 20px;
     font-family: sans-serif;
+    background-image: url('../picture/landscape.jpg'); /* 画像のパスを指定 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    background-size: cover; /* 背景領域を画像で覆うように拡大縮小 */
+    background-position: center center; /* 画像を中央に配置 */
+    background-attachment: fixed; 
 }
 .description u {
     text-decoration: underline;
