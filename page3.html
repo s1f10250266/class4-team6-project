@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>ページ3のタイトル</title>
-    </head>
-    <body>
-        
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/page3.css">
+    <title>お問い合わせフォーム</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        お問い合わせ・感想フォーム
+      </div>
+      <div class="form-section">
+        <form id="enqueteForm" action="#" method="post">
+          <div class="question-group">
+            <p>高尾山紹介サイトの評価はいくつですか？</p>
+            <div class="radio-options">
+              <label>
+                <input type="radio" name="found_page" value="1" required>1:良い
+              </label>
+              <label>
+                <input type="radio" name="found_page" value="2" required>2:どちらかといえば良い
+              </label>
+              <label>
+                <input type="radio" name="found_page" value="3" required>3:どちらかといえば悪い
+              </label>
+              <label>
+                <input type="radio" name="found_page" value="4" required>4:悪い
+              </label>
+            </div>
+          </div>
+
+          <div class="comments-group">
+            <label for="comments">ご意見等ございましたらこちらにお書きください</label>
+            <textarea id="comments" name="comments"></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="submit-button">送信</button>
+          </div>
+        </form>
+
+        <div id="message-container"
+             style="text-align: center; margin-top: 20px; font-size: 1.2em; color: green; font-weight: bold;">
+        </div>
+      </div>
+    </div>
+    <script src="js/bg-slider.js"></script>
+    <script src="js/page4.js"></script>
+  </body>
 </html>
