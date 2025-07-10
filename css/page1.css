@@ -12,23 +12,26 @@
 .description p {
     font-size: 20px;
     background-color: #74815a; 
-    animation: slideInFromLeft 1s ease-out forwards;
+    animation: slideInFromLeft 1.5s ease-out forwards;
     color: #ffffff ;
+    border-radius: 6px;
 }
 
 h1 {
     border-bottom: solid 5px #4B6700;
     background-color: #BCCF88;
     padding: 10px;
-    animation: slideInFromLeft 1s ease-out forwards;
+    animation: slideInFromLeft 1.5s ease-out forwards;
     color: #ffffff;
+    border-radius: 12px;
 }
 h2 {
     border-bottom: solid 5px #4B6700;
     background-color: #BCCF88;
     padding: 10px;
-    animation: slideInFromLeft 1s ease-out forwards;
+    animation: slideInFromLeft 1.5s ease-out forwards;
     color: #ffffff;
+    border-radius: 12px;
 }
 body {
     background-color: #ffffff;
