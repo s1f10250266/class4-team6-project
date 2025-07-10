@@ -18,6 +18,7 @@
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
     .description p:hover {
+    animation: none;
     transform: translateY(-3px); /* 上に5px移動 */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* 影を追加 */
 }
@@ -32,6 +33,7 @@ h1 {
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
     h1:hover {
+    animation: none;
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -45,6 +47,7 @@ h2 {
     border-radius: 12px;
 }
     h2:hover {
+    animation: none;
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
