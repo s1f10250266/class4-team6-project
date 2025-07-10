@@ -1,41 +1,54 @@
-@keyframes slideInFromRight {
+@keyframes slideInFromLeft {
     from {
-        transform: translateX(100%); /* 開始位置: 親要素の幅の100%分右へ移動 */
-        opacity: 0; /* 最初は非表示 */
+        transform: translateX(100%);
+        opacity: 0;
     }
     to {
-        transform: translateX(0); /* 終了位置: 元の位置に戻る */
-        opacity: 1; /* 最終的に表示 */
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 .description p {
     font-size: 20px;
-    background-color: #BCCF88; 
-    animation: slideInFromRight 1s ease-out 0.5s forwards; /* アニメーション適用（遅延あり） */
+    background-color: #74815a; 
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    color: #ffffff ;
+    border-radius: 6px;
 }
 
 h1 {
     border-bottom: solid 5px #4B6700;
-    background-color:  #BCCF88;
+    background-color: #BCCF88;
     padding: 10px;
-    animation: slideInFromRight 1s ease-out forwards; /* アニメーション適用 */
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    color: #ffffff;
+    border-radius: 12px;
 }
 h2 {
-    border-bottom: solid 5px #4B6700; /* 指定された色を維持 */
-    background-color:  #A6D52C;
+    border-bottom: solid 5px #4B6700;
+    background-color: #BCCF88;
     padding: 10px;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    color: #ffffff;
+    border-radius: 12px;
 }
 body {
     background-color: #ffffff;
     margin: 0;
     padding: 20px;
     font-family: sans-serif;
+    background-image: url('../picture/landscape.jpg'); /* 画像のパスを指定 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    background-size: cover; /* 背景領域を画像で覆うように拡大縮小 */
+    background-position: center center; /* 画像を中央に配置 */
+    background-attachment: fixed; 
 }
 .description u {
     text-decoration: underline;
-    text-decoration-color: #4B6700; /* 指定された色を維持 */
+    text-decoration-color: #4B6700;
     text-decoration-thickness: 3px;
+    color: #ffffff;
 }
 .media-container figure img {
   width: 650px;
@@ -59,7 +72,7 @@ body {
 .button-container button {
   padding: 8px 16px;
   margin: 0 8px;
-  background-color: #4B6700; /* 指定された色を維持 */
+  background-color: #4B6700;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -67,5 +80,5 @@ body {
   font-size: 16px;
 }
 .button-container button:hover {
-  background-color: #3e5300; /* 指定された色を維持 */
+  background-color: #3e5300;
 }

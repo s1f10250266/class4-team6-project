@@ -5,16 +5,14 @@
         <title>高尾山とは？</title>
         <link rel="stylesheet" href="css/page1.css">
         <style>
-            /* 既存のスタイルはそのままに、ここで画像サイズだけ調整します */
             .media-container {
                 display: flex;
                 align-items: flex-start;
                 gap: 20px;
             }
-            /* figure 内の画像を小さくする */
             .media-container figure img {
-                width: 650px;     /* お好みの横幅に */
-                height: auto;     /* アスペクト比を維持 */
+                width: 650px;
+                height: auto;
                 object-fit: cover;
                 display: block;
             }
@@ -22,7 +20,6 @@
                 max-width: 400px;
                 line-height: 1.6;
             }
-            /* 前／次ボタンのスタイル */
             .button-container {
                 margin: 20px 0;
                 text-align: center;
@@ -46,7 +43,6 @@
         <h1>高尾山とは？</h1>
         <div class="media-container">
             <figure>
-                <!-- inline style は削除 -->
                 <img src="picture/temple-monster.jpg" alt="高尾山薬王院">
                 <figcaption id="caption">高尾山薬王院</figcaption>
             </figure>
@@ -59,7 +55,6 @@
                 </p>
             </div>
         </div>
-        <!-- ボタン -->
         <div class="button-container">
             <button id="prev">前の画像</button>
             <button id="next">次の画像</button>
@@ -70,35 +65,28 @@
             <h2>高尾山と天狗</h2>
             <p>高尾山と天狗様の関係は、修験道や山岳信仰の流れの中で形成され、飯縄大権現信仰と結びつき、現代も文化的・宗教的な象徴として大切にされています。天狗は高尾山の守護者であり、ご利益を授ける存在として、多くの人々に親しまれています。</p>
         </div>
-        <!-- 画像切り替え用 JS -->
         <script>
-            // 画像切り替え対象のパス配列
             const images = [
                 'picture/temple-monster.jpg',
                 'picture/map.jpg'
             ];
-            // 対応するキャプション配列（同じインデックスに対応）
             const captions = [
-                '薬師寺',
+                '高尾山薬王院',
                 '高尾山遊歩マップ'
             ];
             let current = 0;
-            // DOM を取得
             const imgEl     = document.querySelector('.media-container figure img');
             const captionEl = document.getElementById('caption');
             const btnPrev   = document.getElementById('prev');
             const btnNext   = document.getElementById('next');
-            // キャプションも含めて更新する関数
             function updateMedia() {
                 imgEl.src             = images[current];
                 captionEl.textContent = captions[current];
             }
-            // 前ボタン
             btnPrev.addEventListener('click', () => {
                 current = (current - 1 + images.length) % images.length;
                 updateMedia();
             });
-            // 次ボタン
             btnNext.addEventListener('click', () => {
                 current = (current + 1) % images.length;
                 updateMedia();

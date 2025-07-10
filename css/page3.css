@@ -1,0 +1,111 @@
+body { 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center; 
+  transition: background-image 1s ease-in-out;
+} 
+form { 
+  background: rgba(255,255,255,0.8); 
+  /* … */ 
+} 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+.header {
+    background-color: #065f32;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.form-section {
+    padding: 20px;
+}
+.question-group {
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #ffffff;
+}
+.question-group:last-of-type {
+    margin-bottom: 30px;
+}
+.question-group p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+.radio-options label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 25px;
+    font-size: 0.95em;
+    color: #555;
+    cursor: pointer;
+}
+.radio-options input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+.submit-button {
+    width: 120px;
+    padding: 12px 0;
+    background-color: #065f32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+.submit-button:hover {
+    background-color: #065f32;
+}
+.comments-group {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.comments-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+}
+
+.comments-group textarea {
+    width: calc(100% - 10px);
+    min-height: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.95em;
+    resize: vertical;
+}
