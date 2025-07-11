@@ -40,7 +40,7 @@
         </style>
     </head>
     <body>
-        <h1>高尾山とは？</h1>
+        <h1 class="description slide-in">高尾山とは？</h1>
         <div class="media-container">
             <figure>
                 <img src="picture/temple-monster.jpg" alt="高尾山薬王院">
@@ -48,7 +48,7 @@
             </figure>
             <div class="description">
                 <h2>高尾山の魅力</h2>
-                <p>
+                <p class="description slide-in">
                     東京都八王子市にある標高５９９メートルの山で、登山初心者でも気軽に楽しめる山です。山の中には有名な「髙尾山薬王院」があり、左の画像はその境内にある「天狗像」です。都心からのアクセスが良く、新宿駅から高尾山のある高尾山口駅まで約１時間で行くことができます。
                     <u>２００７年には、ミシュラン観光ガイドで三ツ星を獲得し、年間２６０万人から３００万人の観光者が訪れるなど非常に人気な山です。</u>
                     ぜひ休日は、高尾山に足を運んでみてはいかがでしょうか。
@@ -60,10 +60,10 @@
             <button id="next">次の画像</button>
         </div>
         <div class="description">
-            <h2>高尾山薬王院とは？</h2>
-            <p>高尾山薬王院は、奈良時代の創建以来1200年以上の歴史を持ち、薬師如来や飯縄大権現を本尊とし、真言密教と修験道の融合した霊験あらたかな山寺です。その信仰文化や伝統行事、史跡としての魅力は、今日まで多くの人々に親しまれています。</p>
-            <h2>高尾山と天狗</h2>
-            <p>高尾山と天狗様の関係は、修験道や山岳信仰の流れの中で形成され、飯縄大権現信仰と結びつき、現代も文化的・宗教的な象徴として大切にされています。天狗は高尾山の守護者であり、ご利益を授ける存在として、多くの人々に親しまれています。</p>
+            <h2 class="slide-in">高尾山薬王院とは？</h2>
+            <p class="description slide-in">高尾山薬王院は、奈良時代の創建以来1200年以上の歴史を持ち、薬師如来や飯縄大権現を本尊とし、真言密教と修験道の融合した霊験あらたかな山寺です。その信仰文化や伝統行事、史跡としての魅力は、今日まで多くの人々に親しまれています。</p>
+            <h2 class="slide-in">高尾山と天狗</h2>
+            <p class="description slide-in">高尾山と天狗様の関係は、修験道や山岳信仰の流れの中で形成され、飯縄大権現信仰と結びつき、現代も文化的・宗教的な象徴として大切にされています。天狗は高尾山の守護者であり、ご利益を授ける存在として、多くの人々に親しまれています。</p>
         </div>
         <script>
             const images = [
@@ -91,6 +91,13 @@
                 current = (current + 1) % images.length;
                 updateMedia();
             });
+            window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.slide-in').forEach(el => {
+    el.addEventListener('animationend', () => {
+      el.classList.remove('slide-in');
+    });
+  });
+});
         </script>
     </body>
 </html>
